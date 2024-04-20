@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.irede.dto.FilmeDTO;
@@ -49,8 +50,18 @@ public class FilmeController {
 	
 	
 	@GetMapping()
-	public FilmePageDTO getAllFilmes(){
-		return this.filmeService.getAllFilmes();
+	@Operation(summary = "Listagem dos filmes com paginação", method = "GET")
+	@ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Busca realizada com sucesso"),
+            @ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
+            @ApiResponse(responseCode = "400", description = "Parametros inválidos"),
+            @ApiResponse(responseCode = "500", description = "Erro ao realizar busca dos dados"),
+    })
+	public FilmePageDTO getAllFilmes(
+			@RequestParam(name = "pagina") int pagina,
+			@RequestParam(name = "tamanhoPagina") int tamanhoPagina
+			){
+		return this.filmeService.getAllFilmes(pagina, tamanhoPagina);
 	}
 	
 	/*

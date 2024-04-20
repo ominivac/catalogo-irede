@@ -41,8 +41,8 @@ public class FilmeService {
 	
 	
 	
-	public FilmePageDTO getAllFilmes() {
-		Page<Filme> page = this.filmeRepository.findAll(PageRequest.of(0, 5));
+	public FilmePageDTO getAllFilmes(int pagina, int tamanhoPagina) {
+		Page<Filme> page = this.filmeRepository.findAll(PageRequest.of(pagina, tamanhoPagina));
 		List<Filme> filmes = page.toList();
 		List<FilmeDTO> filmeDTOs = new ArrayList<FilmeDTO>();
 		
