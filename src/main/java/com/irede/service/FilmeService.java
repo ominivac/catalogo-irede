@@ -1,14 +1,17 @@
 package com.irede.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.irede.dto.FilmeDTO;
+import com.irede.dto.FilmePageDTO;
 import com.irede.entity.Filme;
-import com.irede.entity.Sala;
 import com.irede.exception.FilmeNotFoundException;
 import com.irede.exception.SalaNotFoundException;
 import com.irede.repository.FilmeRepository;
@@ -31,9 +34,26 @@ public class FilmeService {
 		
 	}
 	
-
+	/*
 	public List<Filme> getAllFilmes() {
 		return this.filmeRepository.findAll();
+	}*/
+	
+	
+	
+	public FilmePageDTO getAllFilmes() {
+		Page<Filme> page = this.filmeRepository.findAll(PageRequest.of(0, 5));
+		List<Filme> filmes = page.toList();
+		List<FilmeDTO> filmeDTOs = new ArrayList<FilmeDTO>();
+		
+		for(int i=0; i< filmes.size(); i++) {
+			filmeDTOs.add( new FilmeDTO(filmes.get(i).getNome(), filmes.get(i).getDiretor(), filmes.get(i).getDuracao(), null));
+		}
+		
+		
+		return new FilmePageDTO(filmeDTOs, page.getTotalElements(), page.getTotalPages() );
+		
+		
 	}
 	
 	

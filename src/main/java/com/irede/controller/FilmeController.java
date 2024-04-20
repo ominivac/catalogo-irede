@@ -1,9 +1,5 @@
 package com.irede.controller;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.irede.dto.FilmeDTO;
+import com.irede.dto.FilmePageDTO;
 import com.irede.entity.Filme;
 import com.irede.service.FilmeService;
 
@@ -50,6 +47,13 @@ public class FilmeController {
 		return ResponseEntity.ok(newFilme);
 	}
 	
+	
+	@GetMapping()
+	public FilmePageDTO getAllFilmes(){
+		return this.filmeService.getAllFilmes();
+	}
+	
+	/*
 	@GetMapping()
 	@Operation(summary = "Listagem de todos os filmes", method = "GET")
     @ApiResponses(value = {
@@ -67,7 +71,9 @@ public class FilmeController {
 		  else
 		     return ResponseEntity.of(Optional.of(list));
 
-	}
+	}*/
+	
+	
 	
 	
 	@PutMapping("/{id}")
