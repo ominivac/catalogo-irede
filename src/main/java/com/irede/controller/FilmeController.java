@@ -17,13 +17,17 @@ import com.irede.entity.Filme;
 import com.irede.service.FilmeService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @RestController
 @RequestMapping("/api/filme")
-@Tag(name = "Controller Filme")
+@Tag(name = "EndPoint Filme")
 public class FilmeController {
 	
 	private FilmeService filmeService;
@@ -57,9 +61,13 @@ public class FilmeController {
             @ApiResponse(responseCode = "400", description = "Parametros inválidos"),
             @ApiResponse(responseCode = "500", description = "Erro ao realizar busca dos dados"),
     })
+	
 	public FilmePageDTO getAllFilmes(
-			@RequestParam(name = "pagina") int pagina,
-			@RequestParam(name = "tamanhoPagina") int tamanhoPagina
+			@Parameter(description = "página inicial")
+			@RequestParam(name = "pagina") @PositiveOrZero int pagina,
+			
+			@Parameter(description = "tamanho da página")
+			@RequestParam(name = "tamanhoPagina") @Positive @Max(100) int tamanhoPagina
 			){
 		return this.filmeService.getAllFilmes(pagina, tamanhoPagina);
 	}

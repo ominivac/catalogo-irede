@@ -1,0 +1,28 @@
+
+SALAS :
+
+{
+    "numeroSala" : "sala 01",
+    "descricao" : "descrição sala 01", 
+}
+
+{
+    "numeroSala" : "sala 02",
+    "descricao" : "descrição sala 02", 
+}
+
+{
+    "numeroSala" : "sala 03",
+    "descricao" : "descrição sala 03", 
+}
+
+{
+    "numeroSala" : "sala 04",
+    "descricao" : "descrição sala 04", 
+}
+
+{
+    "numeroSala" : "sala 05",
+    "descricao" : "descrição sala 01", 
+}
+

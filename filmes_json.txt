@@ -1,0 +1,113 @@
+
+
+FILMES :
+
+
+{
+    "nome" : "O nome da rosa",
+    "diretor" : "Umberto Eco",
+    "duracao": "1.30"
+}
+
+
+{
+    "nome" : "A filha de ryan",
+    "diretor" : "David Lean",
+    "duracao": "1.14"
+}
+
+{
+    "nome" : "O poderoso chefão",
+    "diretor" : "Francis Ford Copola",
+    "duracao": "2.10"
+}
+
+{
+    "nome" : "O  clube da luta",
+    "diretor" : "David Fincher",
+    "duracao": "2.12"
+}
+
+
+{
+    "nome" : "Lawrence da Arábia",
+    "diretor" : "David Lean",
+    "duracao": "3.07"
+}
+
+{
+    "nome" : "2001 uma odisséia no espaço",
+    "diretor" : "Stanley Kubrick",
+    "duracao": "2.14"
+}
+
+{
+    "nome" : "taxi Driver",
+    "diretor" : "Martin Scorsese",
+    "duracao": "1.54"
+}
+
+
+{
+    "nome" : "Onde os fracos não tem vez",
+    "diretor" : " Ethan Coen, Joel Coen",
+    "duracao": "2.14"
+}
+
+
+{
+    "nome" : "Três homens em conflito",
+    "diretor" : "Sergio Leone",
+    "duracao": "2.22"
+}
+
+
+{
+    "nome" : "Ben-Hur",
+    "diretor" : "William Wyler",
+    "duracao": "3.27"
+}
+
+
+
+
+
+
+
+
+
+
+SALAS :
+
+{
+    "numeroSala" : "sala 01",
+    "descricao" : "descrição sala 01", 
+}
+
+{
+    "numeroSala" : "sala 04",
+    "descricao" : "sala 04 -teste insert  com filme",
+     "filmes":[
+        {
+        "id": 5,
+        "nome": "Lawrence da Arábia",
+        "diretor": "David Lean",
+        "duracao": "3.07"
+        }
+     ]   
+}
+
+
+
+
+01 - FilmeController :
+	insert - ok 
+	editar filme - ok
+	delete filme - ok - 200
+	Listar Todos - ok
+	
+
+02 - Sala Controller :
+
+	insert ( sem filme ) - ok
+	insert com filme - 

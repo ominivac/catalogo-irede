@@ -23,9 +23,11 @@ import com.irede.service.SalaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/sala")
+@Tag(name = "EndPoint Sala")
 public class SalaController {
 	
 	private SalaService salaService;
