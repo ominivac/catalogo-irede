@@ -3,6 +3,7 @@ package com.irede.entity;
 
 
 import java.util.List;
+import java.util.Set;
 
 import com.irede.dto.SalaDTO;
 
@@ -41,8 +42,8 @@ public class Sala {
 	
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "sala",cascade = CascadeType.ALL)
-	//@JoinColumn(name="sala_id")
 	private List<Filme> filmes;
+	
 	
 	public Sala(SalaDTO salaData) {
 		this.numeroSala = salaData.numeroSala();

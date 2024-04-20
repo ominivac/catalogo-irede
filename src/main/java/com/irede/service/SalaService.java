@@ -26,7 +26,7 @@ public class SalaService {
 	
 	public Sala insert(SalaDTO salaData) {
 		Sala newSala = new Sala(salaData);
-		System.out.println("------ sala a add : "+  salaData.filmes());
+		//System.out.println("------ sala a add : "+  salaData.filmes());
 		this.salaRepository.save(newSala);
 		
 		
@@ -47,7 +47,9 @@ public class SalaService {
 				.orElseThrow(SalaNotFoundException:: new);
 
 		if(!salaDTO.descricao().isEmpty() )
+			sala.setNumeroSala(salaDTO.numeroSala());
 			sala.setDescricao(salaDTO.descricao() );
+		
 		
 		
 		this.salaRepository.save(sala);

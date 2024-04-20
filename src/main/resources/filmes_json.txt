@@ -7,7 +7,8 @@ FILMES :
     "nome" : "O nome da rosa",
     "diretor" : "Umberto Eco",
     "duracao": "1.30"
-},
+}
+
 
 {
     "nome" : "A filha de ryan",
@@ -33,6 +34,47 @@ FILMES :
     "diretor" : "David Lean",
     "duracao": "3.07"
 }
+
+{
+    "nome" : "2001 uma odisséia no espaço",
+    "diretor" : "Stanley Kubrick",
+    "duracao": "2.14"
+}
+
+{
+    "nome" : "taxi Driver",
+    "diretor" : "Martin Scorsese",
+    "duracao": "1.54"
+}
+
+
+{
+    "nome" : "Onde os fracos não tem vez",
+    "diretor" : " Ethan Coen, Joel Coen",
+    "duracao": "2.14"
+}
+
+
+{
+    "nome" : "Três homens em conflito",
+    "diretor" : "Sergio Leone",
+    "duracao": "2.22"
+}
+
+
+{
+    "nome" : "Ben-Hur",
+    "diretor" : "William Wyler",
+    "duracao": "3.27"
+}
+
+
+
+
+
+
+
+
 
 
 SALAS :
