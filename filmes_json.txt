@@ -1,0 +1,66 @@
+
+
+FILMES :
+
+
+{
+    "nome" : "O nome da rosa",
+    "diretor" : "Umberto Eco",
+    "duracao": "1.30"
+},
+
+{
+    "nome" : "A filha de ryan",
+    "diretor" : "David Lean",
+    "duracao": "1.14"
+}
+
+{
+    "nome" : "O poderoso chefão",
+    "diretor" : "Francis Ford Copola",
+    "duracao": "2.10"
+}
+
+{
+    "nome" : "O  clube da luta",
+    "diretor" : "David Fincher",
+    "duracao": "2.12"
+}
+
+
+{
+    "nome" : "Lawrence da Arábia",
+    "diretor" : "David Lean",
+    "duracao": "3.07"
+}
+
+
+SALAS :
+
+{
+    "numeroSala" : "sala 04",
+    "descricao" : "sala 04 -teste insert  com filme",
+     "filmes":[
+        {
+        "id": 5,
+        "nome": "Lawrence da Arábia",
+        "diretor": "David Lean",
+        "duracao": "3.07"
+        }
+     ]   
+}
+
+
+
+
+01 - FilmeController :
+	insert - ok 
+	editar filme - ok
+	delete filme - ok - 200
+	Listar Todos - ok
+	
+
+02 - Sala Controller :
+
+	insert ( sem filme ) - ok
+	insert com filme - 

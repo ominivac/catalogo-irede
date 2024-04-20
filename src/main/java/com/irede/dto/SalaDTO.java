@@ -1,5 +1,9 @@
 package com.irede.dto;
 
-public record SalaDTO(String numeroSala, String descricao) {
+import java.util.List;
+
+import com.irede.entity.Filme;
+
+public record SalaDTO(String numeroSala, String descricao, List<Filme> filmes) {
 
 }

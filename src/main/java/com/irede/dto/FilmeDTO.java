@@ -1,5 +1,5 @@
 package com.irede.dto;
 
-public record FilmeDTO(String nome, String Diretor, Long duracao) {
+public record FilmeDTO(String nome, String diretor, String duracao) {
 
 }

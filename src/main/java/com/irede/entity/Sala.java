@@ -1,13 +1,19 @@
 package com.irede.entity;
 
-import org.springframework.data.annotation.Id;
+
+
+import java.util.List;
 
 import com.irede.dto.SalaDTO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
@@ -19,7 +25,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Data
-@Entity()
+@Entity
 @Table(name = "sala")
 public class Sala {
 	
@@ -27,16 +33,26 @@ public class Sala {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nuemroSala")
+	@Column(name = "numeroSala")
 	private String numeroSala;
 	
 	@Column(name = "descricao")
 	private String descricao;
+	
+	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "sala",cascade = CascadeType.ALL)
+	//@JoinColumn(name="sala_id")
+	private List<Filme> filmes;
 	
 	public Sala(SalaDTO salaData) {
 		this.numeroSala = salaData.numeroSala();
 		this.descricao = salaData.descricao();
 		
 	}
+	
+	public List<Filme> getFilmes(){
+		return filmes;
+	}
+	
 
 }

@@ -1,13 +1,17 @@
 package com.irede.entity;
 
-import org.springframework.data.annotation.Id;
+
 
 import com.irede.dto.FilmeDTO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
@@ -18,7 +22,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Data
-@Entity()
+@Entity
 @Table(name = "filme")
 public class Filme {
 
@@ -31,20 +35,35 @@ public class Filme {
 	private String nome;
 	
 
-	@Column(name = "nome")
+	@Column(name = "diretor")
 	private String diretor;
 	
 
 	@Column(name = "duracao")
-	private Long duracao;
+	private String duracao;
+	
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sala_id")
+	private Sala sala;
 	
 	
 	public Filme(FilmeDTO filmeData) {
 		this.nome = filmeData.nome();
-		this.diretor =  filmeData.Diretor();
+		this.diretor =  filmeData.diretor();
 		this.duracao = filmeData.duracao();
 		
 	}
+
+
+	@Override
+	public String toString() {
+		return "Filme [id=" + id + ", nome=" + nome + ", diretor=" + diretor + ", duracao=" + duracao + ", sala=" + sala
+				+ "]";
+	}
+	
+	
+	
 	
 	
 }
