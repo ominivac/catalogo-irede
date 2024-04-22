@@ -68,7 +68,10 @@ public class FilmeService {
 				.orElseThrow(FilmeNotFoundException:: new);
 
 		if(!filmeDTO.diretor().isEmpty() )
+			filme.setNome(filmeDTO.nome() );
 			filme.setDiretor(filmeDTO.diretor() );
+			filme.setDuracao(filmeDTO.duracao() );
+			filme.setSala(filmeDTO.sala() );
 		
 		
 		this.filmeRepository.save(filme);
