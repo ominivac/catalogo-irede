@@ -70,6 +70,17 @@ public class SalaController {
 	}
 	
 	
+	@ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Busca realizada com sucesso"),
+            @ApiResponse(responseCode = "500", description = "Erro ao realizar busca dos dados"),
+    })
+	@GetMapping("/findBy/{id}")
+	public ResponseEntity<Optional<Sala>> findById(@PathVariable("id") Long id){
+		Optional<Sala> salaFound = this.salaService.getById(id);
+		return ResponseEntity.ok(salaFound);
+	}
+	
+	
 	
 	@PutMapping("/{id}")
 	@Operation(summary = "Realiza o update de uma Sala", method = "PUT")

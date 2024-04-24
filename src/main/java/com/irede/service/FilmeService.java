@@ -73,6 +73,9 @@ public class FilmeService {
 			filme.setDuracao(filmeDTO.duracao() );
 			filme.setSala(filmeDTO.sala() );
 		
+			
+			
+			
 		
 		this.filmeRepository.save(filme);
 		

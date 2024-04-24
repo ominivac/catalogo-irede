@@ -42,8 +42,8 @@ public class FilmeController {
 	@Operation(summary = "Realiza o cadastro de novo Filme", method = "POST")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Cadastro de filme realizado com sucesso"),
-            @ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
-            @ApiResponse(responseCode = "400", description = "Parametros inválidos"),
+            //@ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
+            //@ApiResponse(responseCode = "400", description = "Parametros inválidos"),
             @ApiResponse(responseCode = "500", description = "Erro ao realizar o cadastro do filme"),
     })
 	public ResponseEntity<Filme> insert(@RequestBody FilmeDTO filmeDTO ){
@@ -57,8 +57,8 @@ public class FilmeController {
 	@Operation(summary = "Listagem dos filmes com paginação", method = "GET")
 	@ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Busca realizada com sucesso"),
-            @ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
-            @ApiResponse(responseCode = "400", description = "Parametros inválidos"),
+            //@ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
+            //@ApiResponse(responseCode = "400", description = "Parametros inválidos"),
             @ApiResponse(responseCode = "500", description = "Erro ao realizar busca dos dados"),
     })
 	
@@ -99,8 +99,8 @@ public class FilmeController {
 	@Operation(summary = "Realiza o update de um Filme", method = "PUT")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Update de filme realizado com sucesso"),
-            @ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
-            @ApiResponse(responseCode = "400", description = "Parametros inválidos"),
+            //@ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
+            //@ApiResponse(responseCode = "400", description = "Parametros inválidos"),
             @ApiResponse(responseCode = "500", description = "Erro ao realizar o update do filme"),
     })
 	public ResponseEntity<Filme> update(@PathVariable("id") Long id, @RequestBody FilmeDTO filmeDTO){
@@ -114,8 +114,8 @@ public class FilmeController {
 	@Operation(summary = "Realiza o delete de um Filme", method = "DELETE")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Delete de filme realizado com sucesso"),
-            @ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
-            @ApiResponse(responseCode = "400", description = "Parametros inválidos"),
+            //@ApiResponse(responseCode = "422", description = "Dados de requisição inválida"),
+            //@ApiResponse(responseCode = "400", description = "Parametros inválidos"),
             @ApiResponse(responseCode = "500", description = "Erro ao realizar o delete do filme"),
     })
 	public ResponseEntity<Filme> delete(@PathVariable("id") Long id){
